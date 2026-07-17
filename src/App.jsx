@@ -19,6 +19,17 @@ const hooksData = [
   { id: 8, name: "Kisu Libero", image: "/assets/Kisu Libero.png" }
 ];
 
+const NavigationButtons = () => (
+  <div style={{ marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
+    <p style={{ fontSize: '0.8rem', color: '#a1a1aa', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'Orbitron', marginBottom: '10px' }}>Nossos Outros Jogos</p>
+    <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
+      <a href="https://jogos.chumbada.com.br" className="btn-secondary" style={{ flex: 1, minWidth: '140px', margin: 0, fontSize: '0.75rem', padding: '10px 12px', textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>Hub de Jogos</a>
+      <a href="https://jogodasiscas.chumbada.com.br" className="btn-secondary" style={{ flex: 1, minWidth: '140px', margin: 0, fontSize: '0.75rem', padding: '10px 12px', textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>Jogo das Iscas</a>
+      <a href="https://jogodaschumbadas.chumbada.com.br" className="btn-secondary" style={{ flex: 1, minWidth: '140px', margin: 0, fontSize: '0.75rem', padding: '10px 12px', textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>Jogo das Chumbadas</a>
+    </div>
+  </div>
+);
+
 function App() {
   const [lures, setLures] = useState(hooksData);
   const [gameState, setGameState] = useState('login'); // loading, login, playing, gameover, leaderboard
@@ -317,6 +328,7 @@ function App() {
       >
         Ver Ranking Atual
       </button>
+      <NavigationButtons />
     </div>
   );
 
@@ -400,6 +412,7 @@ function App() {
       <button className="btn-secondary" onClick={() => setGameState('login')} disabled={isSaving}>
         Jogar Novamente
       </button>
+      <NavigationButtons />
     </div>
   );
 
@@ -433,6 +446,7 @@ function App() {
         <button className="btn-primary" onClick={() => setGameState('login')}>
           <span>Voltar ao Início</span>
         </button>
+        <NavigationButtons />
       </div>
     );
   };
